@@ -1,35 +1,33 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const Demo = resolve => require(['./template.vue'], resolve);
-const Main = resolve => require(['./views/Main.vue'], resolve);
-const Home = resolve => require(['./views/page/Home.vue'], resolve);
-const Read = resolve => require(['./views/page/Read.vue'], resolve);
-const Work = resolve => require(['./views/page/Work.vue'], resolve);
-const Share = resolve => require(['./views/page/Share.vue'], resolve);
-const Me = resolve => require(['./views/page/Me.vue'], resolve);
-const Medetail = resolve => require(['./views/page/Medetail.vue'], resolve);
 Vue.use(Router)
- 
+
+const Main = resolve => require(['./views/Main'], resolve)
 export default new Router({
-  mode: 'hash',
-  base: process.env.BASE_URL,
   routes: [
-    {path: '/Demo', component: Demo, name: '测试页' },
     {
       path: '/',  
+      name: 'main',
       component: Main,
-      redirect: 'Home',
-      name: '',
+      redirect: 'home',
       children: [
-        { path: '/Home', component: Home, name: '我的首页'  },
-        { path: '/Me', component: Me, name: '生活札记'  },
-        { path: '/Read', component: Read, name: '图书阅读'  },
-        { path: '/Work', component: Work, name: '创业漫谈'  },
-        { path: '/Share', component: Share, name: '影视分享'  },
-        { path: '/Medetail', component: Medetail, name: 'Me.detail'  }
+        { path: '/home', component: () => import('./views/home'), name: '我的首页'  },
+        { path: '/homedetail', component: () => import('./views/home/homedetail'), name: 'homedetail'  },
+        { path: '/me', component: () => import('./views/me'), name: '生活札记'  },
+        { path: '/medetail', component: () => import('./views/me/medetail'), name: '生活札记'  },
+        { path: '/read', component: () => import('./views/read'), name: '图书阅读'  },
+        { path: '/readdetail', component: () => import('./views/read/readdetail'), name: 'readdetail'  },
+        { path: '/work', component: () => import('./views/work'), name: '创业漫谈'  },
+        { path: '/workdetail', component: () => import('./views/work/workdetail'), name: '生活札记'  },
+        { path: '/share', component: () => import('./views/share'), name: '影视分享'  },
+        { path: '/sharedetail', component: () => import('./views/share/sharedetail'), name: '生活札记'  }
+  
       ]
     },
+    {
+      path: '/uiReset', component: () => import('./views/uiReset/medetail'), name: 'resetPage'
+    }
   ]
 })
 

@@ -33,3 +33,4 @@ npm run build
 
 # vue-my-blog
 # vue-my-blog
+# xiaominblog

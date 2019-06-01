@@ -9,7 +9,7 @@
             <div class="media">
                 <img src="./home.png" width="120" height="120" alt="" />
           </div>
-          <div class="dec">手机等移动端扫描二维码</div>
+          <div class="dec">手机等移动端扫二维码</div>
       </div>
     </div>
 <div class="nav-wrapper">
@@ -68,7 +68,7 @@ export default {
         .title-wrapper
           padding: 70px
           line-height: 24px
-          margin-left: 6%
+          margin-left: 9.1%
           .title
             display: flex
             line-height: 60px

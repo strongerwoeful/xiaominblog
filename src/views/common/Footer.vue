@@ -3,8 +3,7 @@
 <div class="footer">  
     <div class="content">
      <div class="text">© 2018-2019xiaomin's Blog. Powered by Vue.js. Theme by Prower.</div>
-    </div>
-    
+    </div>  
 </div>
 </template>
 <script type="text/babel">
@@ -21,8 +20,7 @@ export default {
      },
     mounted(){
        
-    },
-
+    }
 };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
